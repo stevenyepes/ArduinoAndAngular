@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="weather">
+          <div class="current">
+            <div class="info">
+              <div>&nbsp;</div>
+              <div class="city">
+                <small>
+                  <small>Laboratorio:</small>
+                </small> Fisica avanzada 2-13</div>
+              <div class="temp">{{lecturaEstacion.temperatura}}&deg;
+                <small>C</small>
+              </div>
+              <div class="wind">
+                <small>
+                  <small>Humedad:</small>
+                </small>{{lecturaEstacion.humedad}}%
+              </div>
+              <div>
+                <span *ngIf="lecturaEstacion.incidencia.length != 0">{{lecturaEstacion.incidencia}}
+                  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                </span>
+              </div>
+              <div>&nbsp;</div>
+            </div>
+            <div class="icon">
+              <i *ngIf="lecturaEstacion.incidencia.length == 0; else alerta" class="fa fa-sun-o" aria-hidden="true"></i>
+              <ng-template #alerta>
+                <i class="fa fa-bolt" aria-hidden="true"></i>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
